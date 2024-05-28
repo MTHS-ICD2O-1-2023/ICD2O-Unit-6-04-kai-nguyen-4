@@ -19,8 +19,12 @@ window.onload = function() {
 
   const radius = params.get("radius")
 
+  if (radius >= 0) {
   const volume = 4/3 * Math.PI * (radius ** 3)
   document.getElementById("radiusAnswer").innerHTML = radius + " mm<sup>3</sup> <br /><br />"
-  document.getElementById("answer").innerHTML = "the volume of the sphere is: " + volume
+  document.getElementById("answer").innerHTML = "the volume of the sphere is: " + volume.toFixed(2) + "mm<sup>3</sup>"
+  } else {
+    document.getElementById("answer").innerHTML = "Invalid number"
+  }
 }
 
